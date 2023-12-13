@@ -1,4 +1,4 @@
-def global_alignment_dna(seq1, seq2, match_score=1, mismatch_score=-3, gap_penalty=-2):
+def global_alignment(seq1, seq2, match_score=1, mismatch_score=-2, gap_penalty=-1):
     matrix = [[0] * (len(seq2) + 1) for _ in range(len(seq1) + 1)]
 
     for i in range(1, len(seq1) + 1):

@@ -9,14 +9,12 @@ def read_fasta(file_name:str) -> list:
     Аргументы:
     - file_name (str): имя fasta файла 
     '''
-    fasta_seqs = []
-    with open(os.path.join('bioinf_project', file_name), mode='r') as fasta:
+    with open(os.path.join(os.getcwd(), file_name), mode='r') as fasta:
         lines = fasta.readlines()
         for line in lines:
             if not line.startswith('>'):
-                fasta_seqs.append(line.strip('\n'))
+                return line.strip('\n')
 
-    return fasta_seqs
-
+    
 
 
